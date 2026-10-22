@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Ubuntu Storage Analyzer
+GenericName=System Storage & Memory Analyzer
+Comment=Monitor disk usage, RAM, and system resources
+Exec=/bin/bash -c 'cd %k && source venv/bin/activate && python main.py'
+Icon=utilities-system-monitor
+Terminal=false
+Categories=System;Monitor;Utility;
+Keywords=disk;storage;memory;ram;monitor;analyzer;
+StartupNotify=true
+StartupWMClass=Ubuntu Storage Analyzer

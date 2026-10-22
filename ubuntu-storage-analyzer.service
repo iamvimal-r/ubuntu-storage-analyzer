@@ -1,0 +1,22 @@
+[Unit]
+Description=Ubuntu Storage & Memory Analyzer
+Documentation=file:///var/www/html/ubuntu-storage-analyzer/README.md
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/html/ubuntu-storage-analyzer
+ExecStart=/var/www/html/ubuntu-storage-analyzer/venv/bin/python /var/www/html/ubuntu-storage-analyzer/main.py
+Restart=on-failure
+RestartSec=5
+
+# Logging — view with: journalctl --user -u ubuntu-storage-analyzer -f
+StandardOutput=journal
+StandardError=journal
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=graphical-session.target
